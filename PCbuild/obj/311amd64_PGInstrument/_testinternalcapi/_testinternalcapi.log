@@ -1,0 +1,6 @@
+﻿  _testinternalcapi.c
+  _testinternalcapi.obj : se encontró .netmodule MSIL o un módulo compilado con /GL; reiniciando la vinculación con /LTCG; agregue /LTCG a la línea de comandos de vínculo para mejorar el rendimiento del vinculador
+     Creando biblioteca C:\cpython-3.11.1\PCbuild\amd64\instrumented\_testinternalcapi.lib y objeto C:\cpython-3.11.1\PCbuild\amd64\instrumented\_testinternalcapi.exp
+  Generando código
+  Generación de código finalizada
+  _testinternalcapi.vcxproj -> C:\cpython-3.11.1\PCbuild\amd64\instrumented\_testinternalcapi.pyd

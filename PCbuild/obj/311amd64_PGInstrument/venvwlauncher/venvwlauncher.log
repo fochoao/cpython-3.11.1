@@ -1,0 +1,5 @@
+﻿  launcher.c
+  launcher.obj : se encontró .netmodule MSIL o un módulo compilado con /GL; reiniciando la vinculación con /LTCG; agregue /LTCG a la línea de comandos de vínculo para mejorar el rendimiento del vinculador
+  Generando código
+  Generación de código finalizada
+  venvwlauncher.vcxproj -> C:\cpython-3.11.1\PCbuild\amd64\instrumented\venvwlauncher.exe

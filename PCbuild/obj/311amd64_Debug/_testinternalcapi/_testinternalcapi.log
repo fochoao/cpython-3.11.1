@@ -1,0 +1,2 @@
+﻿  _testinternalcapi.c
+LINK : fatal error LNK1104: no se puede abrir el archivo 'C:\cpython-3.11.1\PCbuild\amd64\python311_d.lib'

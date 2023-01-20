@@ -1,0 +1,6 @@
+﻿  multiprocessing.c
+  semaphore.c
+     Creando biblioteca C:\cpython-3.11.1\PCbuild\amd64\instrumented\_multiprocessing.lib y objeto C:\cpython-3.11.1\PCbuild\amd64\instrumented\_multiprocessing.exp
+  Generando código
+  Generación de código finalizada
+  _multiprocessing.vcxproj -> C:\cpython-3.11.1\PCbuild\amd64\instrumented\_multiprocessing.pyd

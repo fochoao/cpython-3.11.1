@@ -1,0 +1,6 @@
+﻿  sqlite3.c
+  sqlite3.obj : se encontró .netmodule MSIL o un módulo compilado con /GL; reiniciando la vinculación con /LTCG; agregue /LTCG a la línea de comandos de vínculo para mejorar el rendimiento del vinculador
+     Creando biblioteca C:\cpython-3.11.1\PCbuild\amd64\sqlite3.lib y objeto C:\cpython-3.11.1\PCbuild\amd64\sqlite3.exp
+  Generando código
+  Generación de código finalizada
+  sqlite3.vcxproj -> C:\cpython-3.11.1\PCbuild\amd64\sqlite3.dll
