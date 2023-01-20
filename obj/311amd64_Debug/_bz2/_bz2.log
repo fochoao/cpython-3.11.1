@@ -1,0 +1,9 @@
+﻿  _bz2module.c
+  blocksort.c
+  bzlib.c
+  compress.c
+  crctable.c
+  decompress.c
+  huffman.c
+  randtable.c
+LINK : fatal error LNK1104: no se puede abrir el archivo 'C:\cpython-3.11.1\PCbuild\amd64\python311_d.lib'

@@ -1,0 +1,3 @@
+﻿  xxlimited.c
+  xxlimited.obj : se encontró .netmodule MSIL o un módulo compilado con /GL; reiniciando la vinculación con /LTCG; agregue /LTCG a la línea de comandos de vínculo para mejorar el rendimiento del vinculador
+LINK : fatal error LNK1104: no se puede abrir el archivo 'python3.lib'

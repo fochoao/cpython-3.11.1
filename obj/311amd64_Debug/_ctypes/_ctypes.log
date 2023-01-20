@@ -1,0 +1,7 @@
+﻿  _ctypes.c
+  callbacks.c
+  callproc.c
+  cfield.c
+  malloc_closure.c
+  stgdict.c
+LINK : fatal error LNK1104: no se puede abrir el archivo 'C:\cpython-3.11.1\PCbuild\amd64\python311_d.lib'
