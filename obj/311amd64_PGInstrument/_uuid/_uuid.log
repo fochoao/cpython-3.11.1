@@ -1,0 +1,6 @@
+﻿  _uuidmodule.c
+  _uuidmodule.obj : se encontró .netmodule MSIL o un módulo compilado con /GL; reiniciando la vinculación con /LTCG; agregue /LTCG a la línea de comandos de vínculo para mejorar el rendimiento del vinculador
+     Creando biblioteca C:\cpython-3.11.1\PCbuild\amd64\instrumented\_uuid.lib y objeto C:\cpython-3.11.1\PCbuild\amd64\instrumented\_uuid.exp
+  Generando código
+  Generación de código finalizada
+  _uuid.vcxproj -> C:\cpython-3.11.1\PCbuild\amd64\instrumented\_uuid.pyd

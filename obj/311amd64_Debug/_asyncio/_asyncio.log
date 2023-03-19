@@ -1,0 +1,3 @@
+﻿  _asynciomodule.c
+LINK : fatal error LNK1104: no se puede abrir el archivo 'C:\cpython-3.11.1\PCbuild\amd64\python311_d.lib'
+C:\Program Files\Microsoft Visual Studio\2022\Enterprise\MSBuild\Microsoft\VC\v170\Microsoft.CppCommon.targets(1096,5): error MSB6006: "link.exe" salió con el código 1104.

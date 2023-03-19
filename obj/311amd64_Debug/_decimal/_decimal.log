@@ -1,0 +1,18 @@
+﻿  Performing Custom Build Tools
+   Assembling: C:\cpython-3.11.1\Modules\_decimal\libmpdec\vcdiv64.asm
+  _decimal.c
+  basearith.c
+  constants.c
+  context.c
+  convolute.c
+  crt.c
+  difradix2.c
+  fnt.c
+  fourstep.c
+  io.c
+  mpalloc.c
+  mpdecimal.c
+  numbertheory.c
+  sixstep.c
+  transpose.c
+LINK : fatal error LNK1104: no se puede abrir el archivo 'C:\cpython-3.11.1\PCbuild\amd64\python311_d.lib'

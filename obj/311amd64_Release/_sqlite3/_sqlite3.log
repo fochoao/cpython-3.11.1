@@ -1,0 +1,13 @@
+﻿  connection.c
+  cursor.c
+  microprotocols.c
+  module.c
+  prepare_protocol.c
+  row.c
+  statement.c
+  util.c
+  blob.c
+     Creando biblioteca C:\cpython-3.11.1\PCbuild\amd64\_sqlite3.lib y objeto C:\cpython-3.11.1\PCbuild\amd64\_sqlite3.exp
+  Generando código
+  Generación de código finalizada
+  _sqlite3.vcxproj -> C:\cpython-3.11.1\PCbuild\amd64\_sqlite3.pyd

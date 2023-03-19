@@ -1,0 +1,4 @@
+OUT_DIR = \
+C:\cpython-3.11.1\externals\tk-8.6.12.1\win\Release_ARM64_VC13
+TMP_DIR = \
+C:\cpython-3.11.1\externals\tk-8.6.12.1\win\Release_ARM64_VC13\tk_ThreadedDynamic

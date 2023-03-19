@@ -1,0 +1,900 @@
+--------------------
+./configure
+Thu Jan 19 07:38:42 CST 2023
+Checking for gcc...
+=== ztest11868.c ===
+extern int getchar();
+int hello() {return getchar();}
+===
+gcc -c ztest11868.c
+... using gcc
+
+Checking for obsessive-compulsive compiler options...
+=== ztest11868.c ===
+int foo() { return 0; }
+===
+gcc -c -O3 ztest11868.c
+
+Checking for shared library support...
+=== ztest11868.c ===
+extern int getchar();
+int hello() {return getchar();}
+===
+gcc -w -c -O3 -fPIC ztest11868.c
+gcc -shared -O3 -fPIC -o ztest11868.so ztest11868.o
+Building shared library libz.so.1.2.13 with gcc.
+
+=== ztest11868.c ===
+#include <stdio.h>
+#include <stdlib.h>
+size_t dummy = 0;
+===
+gcc -c -O3 ztest11868.c
+Checking for size_t... Yes.
+
+=== ztest11868.c ===
+#include <sys/types.h>
+off64_t dummy = 0;
+===
+gcc -c -O3 -D_LARGEFILE64_SOURCE=1 ztest11868.c
+ztest11868.c:2:1: error: unknown type name ‘off64_t’; did you mean ‘_off64_t’?
+    2 | off64_t dummy = 0;
+      | ^~~~~~~
+      | _off64_t
+(exit code 1)
+Checking for off64_t... No.
+
+=== ztest11868.c ===
+#include <stdio.h>
+int main(void) {
+  fseeko(NULL, 0, 0);
+  return 0;
+}
+===
+gcc -O3 -o ztest11868 ztest11868.c
+Checking for fseeko... Yes.
+
+=== ztest11868.c ===
+#include <string.h>
+#include <errno.h>
+int main() { return strlen(strerror(errno)); }
+===
+gcc -O3 -o ztest11868 ztest11868.c
+Checking for strerror... Yes.
+
+=== ztest11868.c ===
+#include <unistd.h>
+int main() { return 0; }
+===
+gcc -c -O3 ztest11868.c
+Checking for unistd.h... Yes.
+
+=== ztest11868.c ===
+#include <stdarg.h>
+int main() { return 0; }
+===
+gcc -c -O3 ztest11868.c
+Checking for stdarg.h... Yes.
+
+=== ztest11868.c ===
+#include <stdio.h>
+#include <stdarg.h>
+#include "zconf.h"
+int main()
+{
+#ifndef STDC
+  choke me
+#endif
+  return 0;
+}
+===
+gcc -c -O3 ztest11868.c
+Checking whether to use vs[n]printf() or s[n]printf()... using vs[n]printf().
+
+=== ztest11868.c ===
+#include <stdio.h>
+#include <stdarg.h>
+int mytest(const char *fmt, ...)
+{
+  char buf[20];
+  va_list ap;
+  va_start(ap, fmt);
+  vsnprintf(buf, sizeof(buf), fmt, ap);
+  va_end(ap);
+  return 0;
+}
+int main()
+{
+  return (mytest("Hello%d\n", 1));
+}
+===
+gcc -O3 -o ztest11868 ztest11868.c
+Checking for vsnprintf() in stdio.h... Yes.
+
+=== ztest11868.c ===
+#include <stdio.h>
+#include <stdarg.h>
+int mytest(const char *fmt, ...)
+{
+  int n;
+  char buf[20];
+  va_list ap;
+  va_start(ap, fmt);
+  n = vsnprintf(buf, sizeof(buf), fmt, ap);
+  va_end(ap);
+  return n;
+}
+int main()
+{
+  return (mytest("Hello%d\n", 1));
+}
+===
+gcc -c -O3 ztest11868.c
+Checking for return value of vsnprintf()... Yes.
+
+=== ztest11868.c ===
+#define ZLIB_INTERNAL __attribute__((visibility ("hidden")))
+int ZLIB_INTERNAL foo;
+int main()
+{
+  return 0;
+}
+===
+gcc -c -O3 ztest11868.c
+ztest11868.c:6:1: warning: visibility attribute not supported in this configuration; ignored [-Wattributes]
+    6 | }
+      | ^
+Checking for attribute(visibility) support... No.
+
+ALL = static shared
+AR = ar
+ARFLAGS = rc
+CC = gcc
+CFLAGS = -O3
+CPP =
+EXE =
+LDCONFIG = ldconfig
+LDFLAGS =
+LDSHARED = gcc -shared
+LDSHAREDLIBC = -lc
+OBJC = $(OBJZ) $(OBJG)
+PIC_OBJC = $(PIC_OBJZ) $(PIC_OBJG)
+RANLIB = ranlib
+SFLAGS = -O3 -fPIC
+SHAREDLIB = libz.so
+SHAREDLIBM = libz.so.1
+SHAREDLIBV = libz.so.1.2.13
+STATICLIB = libz.a
+TEST = all teststatic testshared
+VER = 1.2.13
+SRCDIR =
+exec_prefix = ${prefix}
+includedir = ${prefix}/include
+libdir = ${exec_prefix}/lib
+mandir = ${prefix}/share/man
+prefix = /usr/local
+sharedlibdir = ${libdir}
+uname = MSYS_NT-10.0-19045
+--------------------
+
+
+--------------------
+./configure
+Thu Jan 19 07:40:39 CST 2023
+Checking for gcc...
+=== ztest12185.c ===
+extern int getchar();
+int hello() {return getchar();}
+===
+gcc -c ztest12185.c
+... using gcc
+
+Checking for obsessive-compulsive compiler options...
+=== ztest12185.c ===
+int foo() { return 0; }
+===
+gcc -c -O3 ztest12185.c
+
+Checking for shared library support...
+=== ztest12185.c ===
+extern int getchar();
+int hello() {return getchar();}
+===
+gcc -w -c -O3 -fPIC ztest12185.c
+gcc -shared -O3 -fPIC -o ztest12185.so ztest12185.o
+Building shared library libz.so.1.2.13 with gcc.
+
+=== ztest12185.c ===
+#include <stdio.h>
+#include <stdlib.h>
+size_t dummy = 0;
+===
+gcc -c -O3 ztest12185.c
+Checking for size_t... Yes.
+
+=== ztest12185.c ===
+#include <sys/types.h>
+off64_t dummy = 0;
+===
+gcc -c -O3 -D_LARGEFILE64_SOURCE=1 ztest12185.c
+ztest12185.c:2:1: error: unknown type name ‘off64_t’; did you mean ‘_off64_t’?
+    2 | off64_t dummy = 0;
+      | ^~~~~~~
+      | _off64_t
+(exit code 1)
+Checking for off64_t... No.
+
+=== ztest12185.c ===
+#include <stdio.h>
+int main(void) {
+  fseeko(NULL, 0, 0);
+  return 0;
+}
+===
+gcc -O3 -o ztest12185 ztest12185.c
+Checking for fseeko... Yes.
+
+=== ztest12185.c ===
+#include <string.h>
+#include <errno.h>
+int main() { return strlen(strerror(errno)); }
+===
+gcc -O3 -o ztest12185 ztest12185.c
+Checking for strerror... Yes.
+
+=== ztest12185.c ===
+#include <unistd.h>
+int main() { return 0; }
+===
+gcc -c -O3 ztest12185.c
+Checking for unistd.h... Yes.
+
+=== ztest12185.c ===
+#include <stdarg.h>
+int main() { return 0; }
+===
+gcc -c -O3 ztest12185.c
+Checking for stdarg.h... Yes.
+
+=== ztest12185.c ===
+#include <stdio.h>
+#include <stdarg.h>
+#include "zconf.h"
+int main()
+{
+#ifndef STDC
+  choke me
+#endif
+  return 0;
+}
+===
+gcc -c -O3 ztest12185.c
+Checking whether to use vs[n]printf() or s[n]printf()... using vs[n]printf().
+
+=== ztest12185.c ===
+#include <stdio.h>
+#include <stdarg.h>
+int mytest(const char *fmt, ...)
+{
+  char buf[20];
+  va_list ap;
+  va_start(ap, fmt);
+  vsnprintf(buf, sizeof(buf), fmt, ap);
+  va_end(ap);
+  return 0;
+}
+int main()
+{
+  return (mytest("Hello%d\n", 1));
+}
+===
+gcc -O3 -o ztest12185 ztest12185.c
+Checking for vsnprintf() in stdio.h... Yes.
+
+=== ztest12185.c ===
+#include <stdio.h>
+#include <stdarg.h>
+int mytest(const char *fmt, ...)
+{
+  int n;
+  char buf[20];
+  va_list ap;
+  va_start(ap, fmt);
+  n = vsnprintf(buf, sizeof(buf), fmt, ap);
+  va_end(ap);
+  return n;
+}
+int main()
+{
+  return (mytest("Hello%d\n", 1));
+}
+===
+gcc -c -O3 ztest12185.c
+Checking for return value of vsnprintf()... Yes.
+
+=== ztest12185.c ===
+#define ZLIB_INTERNAL __attribute__((visibility ("hidden")))
+int ZLIB_INTERNAL foo;
+int main()
+{
+  return 0;
+}
+===
+gcc -c -O3 ztest12185.c
+ztest12185.c:6:1: warning: visibility attribute not supported in this configuration; ignored [-Wattributes]
+    6 | }
+      | ^
+Checking for attribute(visibility) support... No.
+
+ALL = static shared
+AR = ar
+ARFLAGS = rc
+CC = gcc
+CFLAGS = -O3
+CPP =
+EXE =
+LDCONFIG = ldconfig
+LDFLAGS =
+LDSHARED = gcc -shared
+LDSHAREDLIBC = -lc
+OBJC = $(OBJZ) $(OBJG)
+PIC_OBJC = $(PIC_OBJZ) $(PIC_OBJG)
+RANLIB = ranlib
+SFLAGS = -O3 -fPIC
+SHAREDLIB = libz.so
+SHAREDLIBM = libz.so.1
+SHAREDLIBV = libz.so.1.2.13
+STATICLIB = libz.a
+TEST = all teststatic testshared
+VER = 1.2.13
+SRCDIR =
+exec_prefix = ${prefix}
+includedir = ${prefix}/include
+libdir = ${exec_prefix}/lib
+mandir = ${prefix}/share/man
+prefix = /usr/local
+sharedlibdir = ${libdir}
+uname = MSYS_NT-10.0-19045
+--------------------
+
+
+--------------------
+./configure
+Thu Jan 19 07:45:25 CST 2023
+Checking for gcc...
+=== ztest12544.c ===
+extern int getchar();
+int hello() {return getchar();}
+===
+gcc -c ztest12544.c
+... using gcc
+
+Checking for obsessive-compulsive compiler options...
+=== ztest12544.c ===
+int foo() { return 0; }
+===
+gcc -c -O3 ztest12544.c
+
+Checking for shared library support...
+=== ztest12544.c ===
+extern int getchar();
+int hello() {return getchar();}
+===
+gcc -w -c -O3 -fPIC ztest12544.c
+gcc -shared -O3 -fPIC -o ztest12544.so ztest12544.o
+Building shared library libz.so.1.2.13 with gcc.
+
+=== ztest12544.c ===
+#include <stdio.h>
+#include <stdlib.h>
+size_t dummy = 0;
+===
+gcc -c -O3 ztest12544.c
+Checking for size_t... Yes.
+
+=== ztest12544.c ===
+#include <sys/types.h>
+off64_t dummy = 0;
+===
+gcc -c -O3 -D_LARGEFILE64_SOURCE=1 ztest12544.c
+ztest12544.c:2:1: error: unknown type name ‘off64_t’; did you mean ‘_off64_t’?
+    2 | off64_t dummy = 0;
+      | ^~~~~~~
+      | _off64_t
+(exit code 1)
+Checking for off64_t... No.
+
+=== ztest12544.c ===
+#include <stdio.h>
+int main(void) {
+  fseeko(NULL, 0, 0);
+  return 0;
+}
+===
+gcc -O3 -o ztest12544 ztest12544.c
+Checking for fseeko... Yes.
+
+=== ztest12544.c ===
+#include <string.h>
+#include <errno.h>
+int main() { return strlen(strerror(errno)); }
+===
+gcc -O3 -o ztest12544 ztest12544.c
+Checking for strerror... Yes.
+
+=== ztest12544.c ===
+#include <unistd.h>
+int main() { return 0; }
+===
+gcc -c -O3 ztest12544.c
+Checking for unistd.h... Yes.
+
+=== ztest12544.c ===
+#include <stdarg.h>
+int main() { return 0; }
+===
+gcc -c -O3 ztest12544.c
+Checking for stdarg.h... Yes.
+
+=== ztest12544.c ===
+#include <stdio.h>
+#include <stdarg.h>
+#include "zconf.h"
+int main()
+{
+#ifndef STDC
+  choke me
+#endif
+  return 0;
+}
+===
+gcc -c -O3 ztest12544.c
+Checking whether to use vs[n]printf() or s[n]printf()... using vs[n]printf().
+
+=== ztest12544.c ===
+#include <stdio.h>
+#include <stdarg.h>
+int mytest(const char *fmt, ...)
+{
+  char buf[20];
+  va_list ap;
+  va_start(ap, fmt);
+  vsnprintf(buf, sizeof(buf), fmt, ap);
+  va_end(ap);
+  return 0;
+}
+int main()
+{
+  return (mytest("Hello%d\n", 1));
+}
+===
+gcc -O3 -o ztest12544 ztest12544.c
+Checking for vsnprintf() in stdio.h... Yes.
+
+=== ztest12544.c ===
+#include <stdio.h>
+#include <stdarg.h>
+int mytest(const char *fmt, ...)
+{
+  int n;
+  char buf[20];
+  va_list ap;
+  va_start(ap, fmt);
+  n = vsnprintf(buf, sizeof(buf), fmt, ap);
+  va_end(ap);
+  return n;
+}
+int main()
+{
+  return (mytest("Hello%d\n", 1));
+}
+===
+gcc -c -O3 ztest12544.c
+Checking for return value of vsnprintf()... Yes.
+
+=== ztest12544.c ===
+#define ZLIB_INTERNAL __attribute__((visibility ("hidden")))
+int ZLIB_INTERNAL foo;
+int main()
+{
+  return 0;
+}
+===
+gcc -c -O3 ztest12544.c
+ztest12544.c:6:1: warning: visibility attribute not supported in this configuration; ignored [-Wattributes]
+    6 | }
+      | ^
+Checking for attribute(visibility) support... No.
+
+ALL = static shared
+AR = ar
+ARFLAGS = rc
+CC = gcc
+CFLAGS = -O3
+CPP =
+EXE =
+LDCONFIG = ldconfig
+LDFLAGS =
+LDSHARED = gcc -shared
+LDSHAREDLIBC = -lc
+OBJC = $(OBJZ) $(OBJG)
+PIC_OBJC = $(PIC_OBJZ) $(PIC_OBJG)
+RANLIB = ranlib
+SFLAGS = -O3 -fPIC
+SHAREDLIB = libz.so
+SHAREDLIBM = libz.so.1
+SHAREDLIBV = libz.so.1.2.13
+STATICLIB = libz.a
+TEST = all teststatic testshared
+VER = 1.2.13
+SRCDIR =
+exec_prefix = ${prefix}
+includedir = ${prefix}/include
+libdir = ${exec_prefix}/lib
+mandir = ${prefix}/share/man
+prefix = /usr/local
+sharedlibdir = ${libdir}
+uname = MSYS_NT-10.0-19045
+--------------------
+
+
+--------------------
+./configure
+Thu Jan 19 07:49:43 CST 2023
+Checking for gcc...
+=== ztest12858.c ===
+extern int getchar();
+int hello() {return getchar();}
+===
+gcc -c ztest12858.c
+... using gcc
+
+Checking for obsessive-compulsive compiler options...
+=== ztest12858.c ===
+int foo() { return 0; }
+===
+gcc -c -O3 ztest12858.c
+
+Checking for shared library support...
+=== ztest12858.c ===
+extern int getchar();
+int hello() {return getchar();}
+===
+gcc -w -c -O3 -fPIC ztest12858.c
+gcc -shared -O3 -fPIC -o ztest12858.so ztest12858.o
+Building shared library libz.so.1.2.13 with gcc.
+
+=== ztest12858.c ===
+#include <stdio.h>
+#include <stdlib.h>
+size_t dummy = 0;
+===
+gcc -c -O3 ztest12858.c
+Checking for size_t... Yes.
+
+=== ztest12858.c ===
+#include <sys/types.h>
+off64_t dummy = 0;
+===
+gcc -c -O3 -D_LARGEFILE64_SOURCE=1 ztest12858.c
+ztest12858.c:2:1: error: unknown type name ‘off64_t’; did you mean ‘_off64_t’?
+    2 | off64_t dummy = 0;
+      | ^~~~~~~
+      | _off64_t
+(exit code 1)
+Checking for off64_t... No.
+
+=== ztest12858.c ===
+#include <stdio.h>
+int main(void) {
+  fseeko(NULL, 0, 0);
+  return 0;
+}
+===
+gcc -O3 -o ztest12858 ztest12858.c
+Checking for fseeko... Yes.
+
+=== ztest12858.c ===
+#include <string.h>
+#include <errno.h>
+int main() { return strlen(strerror(errno)); }
+===
+gcc -O3 -o ztest12858 ztest12858.c
+Checking for strerror... Yes.
+
+=== ztest12858.c ===
+#include <unistd.h>
+int main() { return 0; }
+===
+gcc -c -O3 ztest12858.c
+Checking for unistd.h... Yes.
+
+=== ztest12858.c ===
+#include <stdarg.h>
+int main() { return 0; }
+===
+gcc -c -O3 ztest12858.c
+Checking for stdarg.h... Yes.
+
+=== ztest12858.c ===
+#include <stdio.h>
+#include <stdarg.h>
+#include "zconf.h"
+int main()
+{
+#ifndef STDC
+  choke me
+#endif
+  return 0;
+}
+===
+gcc -c -O3 ztest12858.c
+Checking whether to use vs[n]printf() or s[n]printf()... using vs[n]printf().
+
+=== ztest12858.c ===
+#include <stdio.h>
+#include <stdarg.h>
+int mytest(const char *fmt, ...)
+{
+  char buf[20];
+  va_list ap;
+  va_start(ap, fmt);
+  vsnprintf(buf, sizeof(buf), fmt, ap);
+  va_end(ap);
+  return 0;
+}
+int main()
+{
+  return (mytest("Hello%d\n", 1));
+}
+===
+gcc -O3 -o ztest12858 ztest12858.c
+Checking for vsnprintf() in stdio.h... Yes.
+
+=== ztest12858.c ===
+#include <stdio.h>
+#include <stdarg.h>
+int mytest(const char *fmt, ...)
+{
+  int n;
+  char buf[20];
+  va_list ap;
+  va_start(ap, fmt);
+  n = vsnprintf(buf, sizeof(buf), fmt, ap);
+  va_end(ap);
+  return n;
+}
+int main()
+{
+  return (mytest("Hello%d\n", 1));
+}
+===
+gcc -c -O3 ztest12858.c
+Checking for return value of vsnprintf()... Yes.
+
+=== ztest12858.c ===
+#define ZLIB_INTERNAL __attribute__((visibility ("hidden")))
+int ZLIB_INTERNAL foo;
+int main()
+{
+  return 0;
+}
+===
+gcc -c -O3 ztest12858.c
+ztest12858.c:6:1: warning: visibility attribute not supported in this configuration; ignored [-Wattributes]
+    6 | }
+      | ^
+Checking for attribute(visibility) support... No.
+
+ALL = static shared
+AR = ar
+ARFLAGS = rc
+CC = gcc
+CFLAGS = -O3
+CPP =
+EXE =
+LDCONFIG = ldconfig
+LDFLAGS =
+LDSHARED = gcc -shared
+LDSHAREDLIBC = -lc
+OBJC = $(OBJZ) $(OBJG)
+PIC_OBJC = $(PIC_OBJZ) $(PIC_OBJG)
+RANLIB = ranlib
+SFLAGS = -O3 -fPIC
+SHAREDLIB = libz.so
+SHAREDLIBM = libz.so.1
+SHAREDLIBV = libz.so.1.2.13
+STATICLIB = libz.a
+TEST = all teststatic testshared
+VER = 1.2.13
+SRCDIR =
+exec_prefix = ${prefix}
+includedir = ${prefix}/include
+libdir = ${exec_prefix}/lib
+mandir = ${prefix}/share/man
+prefix = /usr/local
+sharedlibdir = ${libdir}
+uname = MSYS_NT-10.0-19045
+--------------------
+
+
+--------------------
+./configure
+Thu Jan 19 07:53:26 CST 2023
+Checking for gcc...
+=== ztest13190.c ===
+extern int getchar();
+int hello() {return getchar();}
+===
+gcc -c ztest13190.c
+... using gcc
+
+Checking for obsessive-compulsive compiler options...
+=== ztest13190.c ===
+int foo() { return 0; }
+===
+gcc -c -O3 ztest13190.c
+
+Checking for shared library support...
+=== ztest13190.c ===
+extern int getchar();
+int hello() {return getchar();}
+===
+gcc -w -c -O3 -fPIC ztest13190.c
+gcc -shared -O3 -fPIC -o ztest13190.so ztest13190.o
+Building shared library libz.so.1.2.13 with gcc.
+
+=== ztest13190.c ===
+#include <stdio.h>
+#include <stdlib.h>
+size_t dummy = 0;
+===
+gcc -c -O3 ztest13190.c
+Checking for size_t... Yes.
+
+=== ztest13190.c ===
+#include <sys/types.h>
+off64_t dummy = 0;
+===
+gcc -c -O3 -D_LARGEFILE64_SOURCE=1 ztest13190.c
+ztest13190.c:2:1: error: unknown type name ‘off64_t’; did you mean ‘_off64_t’?
+    2 | off64_t dummy = 0;
+      | ^~~~~~~
+      | _off64_t
+(exit code 1)
+Checking for off64_t... No.
+
+=== ztest13190.c ===
+#include <stdio.h>
+int main(void) {
+  fseeko(NULL, 0, 0);
+  return 0;
+}
+===
+gcc -O3 -o ztest13190 ztest13190.c
+Checking for fseeko... Yes.
+
+=== ztest13190.c ===
+#include <string.h>
+#include <errno.h>
+int main() { return strlen(strerror(errno)); }
+===
+gcc -O3 -o ztest13190 ztest13190.c
+Checking for strerror... Yes.
+
+=== ztest13190.c ===
+#include <unistd.h>
+int main() { return 0; }
+===
+gcc -c -O3 ztest13190.c
+Checking for unistd.h... Yes.
+
+=== ztest13190.c ===
+#include <stdarg.h>
+int main() { return 0; }
+===
+gcc -c -O3 ztest13190.c
+Checking for stdarg.h... Yes.
+
+=== ztest13190.c ===
+#include <stdio.h>
+#include <stdarg.h>
+#include "zconf.h"
+int main()
+{
+#ifndef STDC
+  choke me
+#endif
+  return 0;
+}
+===
+gcc -c -O3 ztest13190.c
+Checking whether to use vs[n]printf() or s[n]printf()... using vs[n]printf().
+
+=== ztest13190.c ===
+#include <stdio.h>
+#include <stdarg.h>
+int mytest(const char *fmt, ...)
+{
+  char buf[20];
+  va_list ap;
+  va_start(ap, fmt);
+  vsnprintf(buf, sizeof(buf), fmt, ap);
+  va_end(ap);
+  return 0;
+}
+int main()
+{
+  return (mytest("Hello%d\n", 1));
+}
+===
+gcc -O3 -o ztest13190 ztest13190.c
+Checking for vsnprintf() in stdio.h... Yes.
+
+=== ztest13190.c ===
+#include <stdio.h>
+#include <stdarg.h>
+int mytest(const char *fmt, ...)
+{
+  int n;
+  char buf[20];
+  va_list ap;
+  va_start(ap, fmt);
+  n = vsnprintf(buf, sizeof(buf), fmt, ap);
+  va_end(ap);
+  return n;
+}
+int main()
+{
+  return (mytest("Hello%d\n", 1));
+}
+===
+gcc -c -O3 ztest13190.c
+Checking for return value of vsnprintf()... Yes.
+
+=== ztest13190.c ===
+#define ZLIB_INTERNAL __attribute__((visibility ("hidden")))
+int ZLIB_INTERNAL foo;
+int main()
+{
+  return 0;
+}
+===
+gcc -c -O3 ztest13190.c
+ztest13190.c:6:1: warning: visibility attribute not supported in this configuration; ignored [-Wattributes]
+    6 | }
+      | ^
+Checking for attribute(visibility) support... No.
+
+ALL = static shared
+AR = ar
+ARFLAGS = rc
+CC = gcc
+CFLAGS = -O3
+CPP =
+EXE =
+LDCONFIG = ldconfig
+LDFLAGS =
+LDSHARED = gcc -shared
+LDSHAREDLIBC = -lc
+OBJC = $(OBJZ) $(OBJG)
+PIC_OBJC = $(PIC_OBJZ) $(PIC_OBJG)
+RANLIB = ranlib
+SFLAGS = -O3 -fPIC
+SHAREDLIB = libz.so
+SHAREDLIBM = libz.so.1
+SHAREDLIBV = libz.so.1.2.13
+STATICLIB = libz.a
+TEST = all teststatic testshared
+VER = 1.2.13
+SRCDIR =
+exec_prefix = ${prefix}
+includedir = ${prefix}/include
+libdir = ${exec_prefix}/lib
+mandir = ${prefix}/share/man
+prefix = /usr/local
+sharedlibdir = ${libdir}
+uname = MSYS_NT-10.0-19045
+--------------------
+
+

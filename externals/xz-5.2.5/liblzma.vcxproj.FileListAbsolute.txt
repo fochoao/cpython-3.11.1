@@ -1,0 +1,1 @@
+C:\cpython-3.11.1\externals\xz-5.2.5\windows\vs2019\ReleaseMT\x64\liblzma\liblzma.lib
